@@ -2,8 +2,8 @@
 
 ## Guides in English
 
-TODO
+- [Getting Started](/docs/en-1-getting-started.md)
 
 ## Guias em Português
 
-TODO
+- [Começando](/docs/pt-1-comecando.md)
