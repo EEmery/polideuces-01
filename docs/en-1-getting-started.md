@@ -147,5 +147,5 @@ The full wiring of the electronic components should looke something like:
 To run the robot, simply run:
 
 ```
-$python3 src/polideuces/controllers/remote_control.py
+$python3 src/polideuces/remote_control.py
 ```

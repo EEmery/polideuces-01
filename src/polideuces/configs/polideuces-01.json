@@ -1,91 +1,105 @@
 {
-    "services": [],
-    "agent_config": {
-      "subsystems": {
-        "viam-agent": {
-          "pin_url": "",
-          "disable": false,
-          "release_channel": "stable",
-          "pin_version": ""
-        },
-        "viam-server": {
-          "pin_url": "",
-          "disable": false,
-          "release_channel": "stable",
-          "pin_version": ""
+  "components": [
+    {
+      "attributes": {},
+      "depends_on": [],
+      "service_configs": [
+        {
+          "attributes": {
+            "capture_methods": []
+          },
+          "type": "data_manager"
         }
-      }
+      ],
+      "name": "raspberry-pi-3",
+      "type": "board",
+      "model": "pi"
     },
-    "components": [
-      {
-        "model": "pi",
-        "attributes": {},
-        "depends_on": [],
-        "service_configs": [
-          {
-            "attributes": {
-              "capture_methods": []
-            },
-            "type": "data_manager"
-          }
-        ],
-        "name": "raspberry-pi-3",
-        "type": "board"
+    {
+      "model": "gpio",
+      "attributes": {
+        "board": "raspberry-pi-3",
+        "max_rpm": 100,
+        "pins": {
+          "pwm": "15",
+          "a": "11",
+          "b": "13"
+        }
       },
-      {
-        "model": "gpio",
-        "attributes": {
-          "pins": {
-            "b": "13",
-            "pwm": "15",
-            "a": "11"
-          },
-          "board": "raspberry-pi-3",
-          "max_rpm": 100
+      "depends_on": [
+        "raspberry-pi-3"
+      ],
+      "name": "dc-motor-right",
+      "type": "motor"
+    },
+    {
+      "attributes": {
+        "max_rpm": 100,
+        "pins": {
+          "pwm": "22",
+          "a": "16",
+          "b": "18"
         },
-        "depends_on": [
-          "raspberry-pi-3"
-        ],
-        "name": "dc-motor-right",
-        "type": "motor"
+        "board": "raspberry-pi-3"
       },
-      {
-        "attributes": {
-          "max_rpm": 100,
-          "pins": {
-            "b": "18",
-            "pwm": "22",
-            "a": "16"
-          },
-          "board": "raspberry-pi-3"
-        },
-        "depends_on": [
-          "raspberry-pi-3"
-        ],
-        "name": "dc-motor-left",
-        "type": "motor",
-        "model": "gpio"
+      "depends_on": [
+        "raspberry-pi-3"
+      ],
+      "name": "dc-motor-left",
+      "type": "motor",
+      "model": "gpio"
+    },
+    {
+      "name": "accelerometer",
+      "model": "gyro-mpu6050",
+      "type": "movement_sensor",
+      "namespace": "rdk",
+      "attributes": {
+        "use_alt_i2c_address": false,
+        "i2c_bus": "1"
       },
-      {
-        "attributes": {
-          "i2c_bus": "1",
-          "use_alt_i2c_address": false
-        },
-        "depends_on": [],
-        "name": "accelerometer",
-        "model": "gyro-mpu6050",
-        "type": "movement_sensor",
-        "namespace": "rdk"
+      "depends_on": []
+    },
+    {
+      "attributes": {
+        "video_path": "usb-046d_0825_A82F62A0-video-index0"
       },
-      {
-        "name": "camera",
-        "model": "webcam",
-        "type": "camera",
-        "namespace": "rdk",
-        "attributes": {
-          "video_path": "usb-046d_0825_A82F62A0-video-index0"
-        },
-        "depends_on": []
+      "depends_on": [],
+      "name": "camera",
+      "model": "webcam",
+      "type": "camera",
+      "namespace": "rdk"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "emery:lv-maxsonar-ez",
+      "version": "0.0.11",
+      "type": "registry",
+      "name": "emery_lv-maxsonar-ez"
+    },
+    {
+      "name": "viam-labs_sysfs-hcsr04",
+      "module_id": "viam-labs:sysfs-hcsr04",
+      "version": "0.0.2",
+      "type": "registry"
+    }
+  ],
+  "services": [],
+  "agent_config": {
+    "subsystems": {
+      "viam-agent": {
+        "pin_version": "",
+        "pin_url": "",
+        "disable": false,
+        "release_channel": "stable"
+      },
+      "viam-server": {
+        "release_channel": "stable",
+        "pin_version": "",
+        "pin_url": "",
+        "disable": false
       }
-    ]
+    }
   }
+}

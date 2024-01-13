@@ -6,8 +6,8 @@ import connectors.xbox_gamepad as cxbox
 import connectors.window_display as cwindow
 
 
-SECRETS_FILE_NAME = "secrets/credentials.json"
-CONFIG_FILE_NAME = "configs/polideuces-01.json"
+SECRETS_FILE_NAME = "src/polideuces/secrets/credentials.json"
+CONFIG_FILE_NAME = "src/polideuces/configs/polideuces-01.json"
 
 
 async def init(secrets_file_name, config_file_name):
