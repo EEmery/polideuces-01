@@ -101,7 +101,7 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 
 **Brains**
 - Raspberry Pi 3 Model B
-- [ ] TODO: Add which and how many cables will be necessary to make all electronic conections
+- Wire jumpers of multiple sizes (femele-to-female and male-to-female)
 
 **Power Supply**
 - 4x 18265 Batteries
@@ -112,9 +112,9 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 
 **Frame**
 - M2.5 Screws and nuts
-	- [ ] TODO: List how many
+    - Of assorted sizes, but mostly varying approximately from 4mm to 10mm
 - M3 Screws and nuts
-	- [ ] TODO: List how many
+	- Only for connecting the DC motors to the frame, must be at least 23mm long
 - 3D Printed Parts:
     - 1x [Skeleton](/models/Skeleton.stl)
     - 1x [Third Feet](/models/Third%20feet.stl)
@@ -132,10 +132,6 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 >You can follow along the video guide at:
 - [ ] TODO: Add link to video
 
-Although you can connect the frame in any order, here is a suggested order to reduce the pains of having components blocking each other when screwing them to the frame:
-- [ ] TODO: Add components order with how many screws and nuts they will need.
-- [ ] TODO: At each component, add the connections wire so that at the end you'll only need to plug them to the Raspberry Pi
-
 **Electronics Schematics**
 
 The full wiring of the electronic components should looke something like:
@@ -144,7 +140,11 @@ The full wiring of the electronic components should looke something like:
 
 ### Running the Robot
 
-To run the robot, simply run:
+To run the robot, make sure:
+- Your xbox gamepad is turned on and connected to your computer
+- The robot is turned on anc connected to the internet
+
+Then simply run:
 
 ```
 $python3 src/polideuces/controllers/remote_control.py
