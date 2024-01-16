@@ -147,5 +147,5 @@ To run the robot, make sure:
 Then simply run:
 
 ```
-$python3 src/polideuces/controllers/remote_control.py
+$python3 src/polideuces/remote_control.py
 ```
