@@ -14,8 +14,6 @@
 
 ## Setup
 
-- [ ] TODO: Add reminder to use the Google Translate extension to view english links in Portuguese if needed.
-
 ### Setup the Raspberry Pi
 
 1. Sign up for a free [Viam account](https://www.viam.com/).
@@ -57,7 +55,7 @@ python3 -m venv .venv && source .venv/bin/activate
 python3 -m pip install -r requirements/prod.txt
 ```
 
-4. Add the credentials to your robot in the repository by creating a file called `credentials.jon` in `src/polideuces/secrets/`. The `credentials.json` file should look something like this:
+4. Add the credentials to your robot in the repository by creating a file called `credentials.json` in `src/polideuces/secrets/`. The `credentials.json` file should look something like this:
 
 ```
 {
@@ -102,6 +100,7 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 **Brains**
 - Raspberry Pi 3 Model B
 - Wire jumpers of multiple sizes (femele-to-female and male-to-female)
+- One gamepad that connects to your computer - I'll be using a xbox gamepad
 
 **Power Supply**
 - 4x 18265 Batteries
@@ -114,10 +113,10 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 - M2.5 Screws and nuts
     - Of assorted sizes, but mostly varying approximately from 4mm to 10mm
 - M3 Screws and nuts
-	- Only for connecting the DC motors to the frame, must be at least 23mm long
+	- Only for connecting the DC motors to the frame, must be at least 23 mm long
 - 3D Printed Parts:
     - 1x [Skeleton](/models/Skeleton.stl)
-    - 1x [Third Feet](/models/Third%20feet.stl)
+    - 1x [Third Foot](/models/Third%20feet.stl)
     - 1x [Battery Holder](/models/Battery%20Holder.stl)
     - 1x [Sensors Array](/models/Sensors%20Array.stl) (if you decide to print the optional parts, the sensors array become unecessary)
 - Optional 3D Printed Parts:
@@ -134,7 +133,7 @@ Take the list of components bellow as a suggestion of parts necessary, but feel 
 
 **Electronics Schematics**
 
-The full wiring of the electronic components should looke something like:
+The full wiring of the electronic components should look something like:
 
 ![electronic-schematics](/docs/images/electronics-schematic.png)
 
